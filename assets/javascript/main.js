@@ -6,7 +6,11 @@ var rapper;
 function makeButtons() {
     $('#buttonDisplay').empty();
     for (var i = 0; i < rappersArray.length; i++) {
-      $('#buttonDisplay').append("<button class='btn btn-lrg btn-primary rapperButton' data-rapper=" + rappersArray[i] + ">" + rappersArray[i] + "</button>");
+      var a = $('<button>');
+		  a.addClass('btn btn-lrg btn-primary rapperButton');
+		  a.attr('data-rapper', rappersArray[i]);
+		  a.text(rappersArray[i]);
+		  $('#buttonDisplay').append(a);
     }
 
 }
@@ -15,7 +19,7 @@ $(document).ready(function() {
   makeButtons();
   //When submit button is clicked, the input value is stored into a variable, pushed into the array, and then the makeButtons function is run again
   $('body').on('click', '.new-rapper', function(event){
-    rapperInput = $('#rapper-input').val();
+    rapperInput = $('#rapper-input').val().trim();
     rappersArray.push(rapperInput);
     makeButtons();
     return false;
