@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Giphy API | Andrew Heinke</title>
+        <title>Giphy API Project | Andrew Heinke</title>
         <meta name="description" content="NBA Trivia Game made by Andrew Heinke">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
@@ -47,22 +47,23 @@
     </div>
 
   <div class="container">
-    <div class="row col-md-12">
-      <div class="animalButtons"></div>
+    <div class="col-centered">
+      <div id="buttonDisplay"></div>
     </div>
-    <div class="col-md-12">
-        <form class="gif-form">
+    <div class="gif-form col-md-6 col-centered">
+        <form class="form-inline">
           <div class="form-group">
-            <label for="exampleInputEmail2">Add an animal</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="type an animal here">
+            <label for="rapper-input">Add a Rapper</label>
+            <input type="text" id="rapper-input" placeholder="type a Rapper here">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary new-rapper">Submit</button>
         </form>
     </div>
-    <div id="animals">
-    </div>
+    <div class="col-md-12">
+      <div class="gifDisplay"></div>
     </div>
 
+  </div>
 
 
 <!--- footer ----->
@@ -73,7 +74,7 @@
             <p>&copy; Andrew Heinke | 2016</p>
           </div>
           <div class="col-md-6 right">
-            <p>If you like this game check me out on <a id="gitLink" href="https://github.com/AndrewHeinke">Github</a></p>
+            <p>If you like this, check me out on <a id="gitLink" href="https://github.com/AndrewHeinke">Github</a></p>
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ body {
 .col-centered{
     float: none;
     margin: 0 auto;
+    text-align: center;
 }
 
 .pageTitle {
@@ -37,6 +38,25 @@ body {
   width: 125px;
 }
 
+#buttonDisplay {
+  margin-top: 20px;
+}
+
+.rapperButton {
+  margin: 5px;
+  background: #9b59b6;
+  border: none;
+  padding: 10px;
+}
+
+.btn-primary.rapperButton:hover {
+  background: #8e44ad;
+  border: none;
+}
+
+.gifLogo {
+  margin-top: 25px;
+}
 .btn-primary:hover {
   border: 1px solid #27ae60;
   background: #27ae60;
@@ -67,11 +87,11 @@ body {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #cccccc;
+  color: #cccccc;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #3498db;
+  color: #3498db;
 }
 
 .gif-form {
@@ -79,10 +99,40 @@ body {
   background: #efefef;
   border-radius: 7px;
   padding: 10px;
+  margin-top: 15px;
 }
 
 .row {
   margin-top: 15px;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.gif-container {
+  width: 25%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.innerContainer {
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: solid 5px #9b59b6;
+  background-color: #000;
+}
+
+
+.gif-resultImg {
+  max-height:100%;
+  max-width:100%;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.gifDisplay {
+  margin-top: 20px;
 }
 
 #gitLink {
@@ -116,9 +166,11 @@ body {
      height: 100px;
      padding-top: 25px;
    }
+
    body {
      margin-bottom: 100px;
    }
+
    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
        border-color: #e7e7e7;
        text-align: left;
@@ -134,4 +186,20 @@ body {
   .title-box {
     height: 125px;
   }
+
+}
+
+@media only screen and (max-width : 768px) {
+.allGif-container {
+  display: block;
+  width: 100%;
+}
+.gif-container {
+  width: 100%;
+}
+
+.innerContainer {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 }
