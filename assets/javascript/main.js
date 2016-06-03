@@ -1,6 +1,6 @@
 var rappersArray = ['Drake', 'French Montana', 'Meek Mill', 'Rick Ross', 'Eminem', 'Nicki Minaj'];
-var rapperInput;
-var rapper;
+
+
 
 //creates buttons from rapper array
 function makeButtons() {
@@ -17,29 +17,28 @@ function makeButtons() {
 }
 
 $(document).ready(function() {
-  makeButtons();
+
   //When submit button is clicked, the input value is stored into a variable, pushed into the array, and then the makeButtons function is run again
   $('body').on('click', '.new-rapper', function(event){
     event.preventDefault();
-    rapperInput = $('#rapper-input').val().trim();
+    var rapperInput = $('#rapper-input').val().trim();
     rappersArray.push(rapperInput);
     makeButtons();
     return false;
   });
 
+  makeButtons();
+
   $('body').on('click', '.rapperButton', function(event){
-    rapper = $(this).attr('data-rapper');
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + rapper + "&api_key=dc6zaTOxFJmzC&limit=10";
     $('.gifDisplay').empty();
+    var rapper = $(this).attr('data-rapper');
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + rapper + "&limit=10" + "&api_key=dc6zaTOxFJmzC";
 
     $.ajax({url: queryURL, method: 'GET'})
       .done(function(response) {
 			  for (var i = 0; i < response.data.length; i++) {
           $('.gifDisplay').append("<div class='gif-container'><p class='rating'>Rating: " + response.data[i].rating.toUpperCase() + "</p><div class='innerContainer'><img class='gif-resultImg img-responsive'" + "data-still='" + response.data[i].images.downsized_still.url + "'" + "data-animate='" + response.data[i].images.downsized.url + "'" + "data-state='still'" + "src='" + response.data[i].images.downsized_still.url + "'></div></div>");
-          rappersArray.push(response.data[i].images.downsized.url);
         }
-
-
     });
   });
 
